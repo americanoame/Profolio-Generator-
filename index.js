@@ -1,3 +1,4 @@
+// Import inquirer, path and fs
 const inquirer = require('inquirer');
 const path = require('path');
 const fs = require('fs');
@@ -22,7 +23,7 @@ const employeeId = [];
 
 // Function init will start the whole page process
 function init() {
-    createManager();  // why we have to pass only manager instead create a team
+    createManager();
 }
 
 // CreateManager function will let the users to create a manager from the comand line 
@@ -61,8 +62,9 @@ function createManager() {
 }
 
 // CreateTeam function is created to enable the user to add additional employees to the team
-// if the user chose 'Enginieer' then Egineer prompt and then engineer will be added to the memberEmployee array and we're doing the same exacly process
-// for 'Intern'. and if no employee to be choose generate the HTML
+// if the user chose 'Enginieer' then Egineer prompt and then engineer will be added to the 
+// memberEmployee array and we're doing the same exacly process
+// for 'Intern' and if no employee to be choose it will generate the HTML
 
 function createTeam() {
 
@@ -152,20 +154,21 @@ function addIntern() {
             message: "What is the intern's school?",
             name: 'internSchool',
         },
-    ])                 
-    
-    // new Intern creates a new instance of our Intern class. This means that we are 
-    // creating an object that followed the parameters for the Intern Class
-        .then((response) => {  
+    ])
+
+        // new Intern creates a new instance of our Intern class. This means that we are 
+        // creating an object that followed the parameters for the Intern Class
+        .then((response) => {
             const intern = new Intern(response.internName, response.internId, response.internEmail, response.internSchool);
-            
+
             memberEployee.push(intern);
 
             createTeam();
         })
 
 }
-// write a better comment
+// function buildTeam will generate the html for which categories the users choose
+
 function buildTeam(memberEmployee) {
     fs.writeFile('./dist/index.html', pageTemplate(memberEmployee), (err) => {
         (err) ? console.log(err) : console.log('HTML pageTemple has been generated successfully');

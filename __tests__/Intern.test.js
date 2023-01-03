@@ -1,9 +1,8 @@
-// intern.getSchool()
-// intern.school returns the school  u put in the parameter when you create new instance
-// intern.getRole()
-
+// Import Intern class with require
 const Intern = require('../lib/Intern');
 
+// Instantiate the Intern class, passing name, id, email and internSchool as 
+// auguments, to create an object and assign it to an new variable
 
 test('can return Intern Properties', () => {
     const intern = new Intern('peter', 2, 'peter@gmail.com', 'internSchool')
