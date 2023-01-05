@@ -4,8 +4,8 @@ const path = require('path');
 const fs = require('fs');
 
 // 1) Import the lib folders
-const Employee = require('./lib/employee');
-const Engineer = require('./lib/engineer');
+const Employee = require('./lib/employee'); // i need to cameback here and study this again 
+const Engineer = require('./lib/engineer'); // its very important concept
 const Intern = require('./lib/intern');
 const Manager = require('./lib/manager');
 
