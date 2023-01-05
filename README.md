@@ -1,7 +1,7 @@
 ## 📖 Description
   
-#### Team profile is an application where the users is able to choose an Employees based on the condition picked 
-#### which are Manager, Egineers and Interns from the comand line in the terminal.
+#### Team profile is an application, where the users is able to choose an Employees such as, 
+#### Manager, Egineers and Interns from the comand line in the terminal.
 
   ## Table of Contents
 * [Installation](#installation)
